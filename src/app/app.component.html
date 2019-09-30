@@ -1,20 +1,67 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="container" style="margin-top: 45px; margin-bottom: 45px">
+  <!-- Content here -->
+  <div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-8" style="background-color: white;padding-left: 42px;padding-right: 42px;box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);">
+      <div style="margin-top: 45px">
+        <div class="media">
+          <!--      <img class="mr-3" src="favicon.ico" alt="Logo">-->
+          <div class="media-body">
+            <h1 class="mt-0">Job Application</h1>
+            Please complete the form below to apply for a position with us.
+          </div>
+        </div>
+        <hr/>
+      </div>
+      <form [ngFormOptions]="form" style="margin-bottom: 45px">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" [(ngModel)]="form.firstName" [ngModelOptions]="{standalone: true}" id="firstName" placeholder="First name">
+        </div>
+        <div class="form-group">
+          <label for="middleName">Middle Name</label>
+          <input type="text" class="form-control" [(ngModel)]="form.middleName" [ngModelOptions]="{standalone: true}" id="middleName" placeholder="Middle name">
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" [(ngModel)]="form.lastName" [ngModelOptions]="{standalone: true}" id="lastName" placeholder="Last name">
+        </div>
+        <div class="form-group">
+          <label for="currentAddress">Current Address</label>
+          <textarea class="form-control" [(ngModel)]="form.currentAddress" [ngModelOptions]="{standalone: true}" id="currentAddress" rows="3" placeholder="Full address"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" [(ngModel)]="form.email" [ngModelOptions]="{standalone: true}" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else & the respone will send to this email only.</small>
+        </div>
+        <div class="form-group">
+          <label for="mobileNumber">Mobile Number</label>
+          <input type="text" class="form-control" [(ngModel)]="form.mobileNumber" [ngModelOptions]="{standalone: true}" id="mobileNumber" placeholder="Mobile number">
+        </div>
+        <div class="form-group">
+          <label for="position">Applying for Position</label>
+          <select [(ngModel)]="form.position" [ngModelOptions]="{standalone: true}" id="position" class="form-control">
+            <option>Chief Executive Officer</option>
+            <option>Chief Operating Officer</option>
+            <option>Chief Financial Officer</option>
+            <option>Secretary</option>
+            <option>Developer</option>
+            <option>Sales person</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fileData">Upload Resume</label>
+          <input type="file" accept=".doc, .docx,.pdf" class="form-control-file" [(ngModel)]="form.fileData" [ngModelOptions]="{standalone: true}" id="fileData">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="submit()">Submit</button>
+      </form>
+    </div>
+    <div class="col-2">
+    </div>
+  </div>
+
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
